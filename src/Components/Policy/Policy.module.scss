@@ -1,0 +1,51 @@
+
+
+.container_info_selected {
+    display: grid;
+    font-size: 0.9em;
+    grid-template-columns:  75% 25%;
+    padding: 0.5rem;
+}
+
+@media (max-width: 700px) {
+    .container_info_selected{
+        display: block;
+    }
+}
+
+
+.parpadea_texto_rojo{
+    display: flex;
+    text-align: center;
+    color: #e41515;
+    padding: 4px;
+    font-size: 0.75em;
+    
+    animation-name: parpadeo;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+
+    -webkit-animation-name: parpadeo;
+    -webkit-animation-duration: 3s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+}
+
+@-moz-keyframes parpadeo {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@-webkit-keyframes parpadeo {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
+@keyframes parpadeo {
+    0% { opacity: 1.0; }
+    50% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}

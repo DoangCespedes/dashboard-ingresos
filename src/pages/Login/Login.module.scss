@@ -1,0 +1,29 @@
+.container{
+    position:absolute
+}
+
+.container_modal_login_piramide{
+    position: absolute;
+    z-index: 1;
+    // border: 2px solid blue;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    align-items: center;
+    height: 89.8vh;
+    background: rgb(140,16,16);
+    // background: linear-gradient(90deg, rgba(140,16,16,0.9472163865546218) 0%, rgba(238,43,43,1) 63%, rgba(255,0,0,1) 100%);}
+    background: linear-gradient(90deg,#eea849,#f46b45)!important;
+}
+.container_modal_login_oceanica{
+    position: absolute;
+    z-index: 1;
+    // border: 2px solid blue;
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    align-items: center;
+    height: 89.8vh;
+    background: rgb(10,88,93);
+    background: linear-gradient(90deg, rgba(10,88,93,0.9472163865546218) 0%, rgba(9,121,120,1) 20%, rgba(0,212,255,1) 100%);
+}

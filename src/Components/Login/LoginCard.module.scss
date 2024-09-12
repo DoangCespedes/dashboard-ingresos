@@ -1,0 +1,73 @@
+// .container_card_login {
+//     // border: 2px solid blue;
+//     width: 27%;
+//     height: 50%;
+//     background: white;
+//     border-radius: 12px;
+//     box-shadow: 10px 10px 5px 0px rgba(120, 120, 120, 0.75);
+//     -webkit-box-shadow: 10px 10px 5px 0px rgb(85 85 85 / 75%);
+//     -moz-box-shadow: 10px 10px 5px 0px rgba(120, 120, 120, 0.75);
+// }
+
+
+
+// .container_user_password {
+//     //  border: 2px solid #ffc800;
+//     padding: 2rem;
+//     padding-left: 4rem;
+// }
+
+// .container_login_button {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     height: 5rem;
+// }
+
+.container_card_login{
+    width: 30vw;
+    height: 42vh;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 10px 10px 5px 0px rgba(120, 120, 120, 0.75);
+    -webkit-box-shadow: 10px 10px 5px 0px rgb(85 85 85 / 75%);
+    -moz-box-shadow: 10px 10px 5px 0px rgba(120, 120, 120, 0.75);
+}
+
+.container_card_header_piramide {
+    // border: 2px solid yellow;
+    // background: rgb(205 93 93);
+    background: #f46b45;
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+    font-family: system-ui;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.container_card_header_oceanica {
+    // border: 2px solid yellow;
+    background: rgb(70 174 185);
+    height: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: 600;
+    font-family: system-ui;
+    border-radius: 10px 10px 0px 0px;
+}
+
+
+
+.container_card_items {
+    width: 73%;
+    margin-left: 15%;
+    margin-top: 13%;
+    gap: 10px;
+    display: grid;
+    gap: 13px;
+}
