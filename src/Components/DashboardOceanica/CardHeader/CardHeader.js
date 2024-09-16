@@ -62,7 +62,6 @@ export default function CardHeader(props) {
     onSubmitData(formattedData);
   };
 
-  console.log(office, "AQUI FUE")
 
   return (
     <>

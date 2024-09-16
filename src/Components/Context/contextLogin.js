@@ -15,7 +15,7 @@ export function UserProvider(props) {
   async function login(params,url) {
     // alert(company)
     try {
-      const { data } = await Axios.post(`${url}/asg-api/login` , params)
+      const { data } = await Axios.post(`https://oceanicadeseguros.com/asg-api/login` , params)
       setUser(data.user["P_PORTAL_USER_ID"])
       sethomeUser(data.user["HOME"])
       setToken(data.token)
