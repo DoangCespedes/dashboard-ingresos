@@ -18,13 +18,14 @@ const EfectivoSobrantesEfectivoSobrantesFaltantes = ({ formData }) => {
       dfecdesde: formData.dateDesde,
       dfechasta: formData.dateHasta,
       ccodmoneda: formData.currency,
+      ccodofi: formData.oficina
     };
 
     setLoading(true);
     setError(null);
 
     try {
-      const { data } = await Axios.post("https://oceanicadeseguros.com/asg-api/dbo/satelite/resumeningresosme", params);
+      const { data } = await Axios.post("https://oceanicadeseguros.com/asg-api/dbo/satelite/totalingresosme", params);
       setResult(data);
     } catch (err) {
       setError("Error fetching data");
@@ -46,7 +47,7 @@ const EfectivoSobrantesEfectivoSobrantesFaltantes = ({ formData }) => {
   const montoLocal = result.ingresos_cur?.[0]?.MTO_LOCAL; // Uso de optional chaining
   const montoMoneda = result.ingresos_cur?.[0]?.MTO_MONEDA; // Uso de optional chaining
 
-  console.log(result, "AQUIFUE")
+  console.log(formData, "AQUIFUE")
   return (
     <>
       <CardManagement>
@@ -57,9 +58,9 @@ const EfectivoSobrantesEfectivoSobrantesFaltantes = ({ formData }) => {
             </div>
 
             {loading && <div>Loading...</div>}
-            {error && <div>{error}</div>}
+            {error && <div>{error}</div>} 
               <div>
-                <div style={{padding:"5px", width: "100%", background: "#000", color: "white", fontSize: "1.5rem", textAlign: "center", borderRadius: "10px" }}>
+              <div style={{padding:"5px", width: "100%", background: "#f5f5f5", color: "#000", fontSize: "1.5rem", textAlign: "center", borderRadius: "10px" }}>
                   {montoMoneda ? <TableInfo montoMoneda={montoMoneda} montoFaltante={montoFaltante}  office={office} /> : 'No hay datos '} {/* Manejo del caso en que montoSobrante es undefined */}
                 </div>
               </div>

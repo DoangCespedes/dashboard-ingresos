@@ -3,7 +3,6 @@ import Axios from 'axios';
 import CardManagement from '@/Components/Cards/CardManagement';
 import GridContainer from '@/Components/Grid/GridContainer';
 import GridItem from '@/Components/Grid/GridItem';
-import BarChart from '@/Components/Pie/BarChart';
 import TableInfo from './TableInfo';
 
 const RecaudaciónDivisasEfectivoFaltantesSobrantes = ({ formData }) => {
@@ -40,38 +39,51 @@ const RecaudaciónDivisasEfectivoFaltantesSobrantes = ({ formData }) => {
     }
   }, [formData]);
 
-  const montoSobrante = result.ingresos_cur?.[0]?.MTO_SOBRANTE; // Uso de optional chaining
-  const office = result.ingresos_cur?.[0]?.OFICINA; // Uso de optional chaining
-  const montoFaltante = result.ingresos_cur?.[0]?.MTO_FALTANTE; // Uso de optional chaining
-  const montoLocal = result.ingresos_cur?.[0]?.MTO_LOCAL; // Uso de optional chaining
-  const montoMoneda = result.ingresos_cur?.[0]?.MTO_MONEDA; // Uso de optional chaining
+  // Mapeo de los datos
+  const newArr = result.ingresos_cur.map((item, index) => ({
+    id: index,
+    CODIGO_OFICINA: item.CODIGO_OFICINA,
+    OFICINA: item.OFICINA,
+    FECHA_INGRESO: item.FECHA_INGRESO,
+    MONEDA: item.MONEDA,
+    NRO_INGRESO: item.NRO_INGRESO,
+    TIPO_DOCUMENTO: item.TIPO_DOCUMENTO,
+    MTO_LOCAL: item.MTO_LOCAL,
+    MTO_MONEDA: item.MTO_MONEDA,
+    NRO_ACRE_FALTANTE: item.NRO_ACRE_FALTANTE,
+    MTO_FALTANTE: item.MTO_FALTANTE,
+    NRO_OBLIG_SOBRANTE: item.NRO_OBLIG_SOBRANTE,
+    MTO_SOBRANTE: item.MTO_SOBRANTE,
+    CLIENTE: item.CLIENTE,
+  }));
 
-  console.log(result, "AQUIFUE")
+ 
   return (
     <>
       <CardManagement>
         <GridContainer justify="center" alignItems="center">
-          <GridItem xs={12} md={8}>
+          <GridItem xs={12} md={12}>
             <div>
               <h1>Recaudación Divisas Efectivo Faltantes Sobrantes</h1>
             </div>
 
             {loading && <div>Loading...</div>}
             {error && <div>{error}</div>}
-              <div>
-                <div style={{padding:"5px", width: "100%", background: "#000", color: "white", fontSize: "1.5rem", textAlign: "center", borderRadius: "10px" }}>
-                  {montoSobrante ? <TableInfo montoSobrante={montoSobrante} office={office} /> : 'No hay datos '} {/* Manejo del caso en que montoSobrante es undefined */}
-                </div>
-              </div>
-          </GridItem>
 
-          <GridItem xs={12} md={4}>
-            <BarChart />
+            <div>
+              <div style={{ padding: "5px", width: "100%", background: "#f5f5f5", color: "#000", fontSize: "1.5rem", textAlign: "center", borderRadius: "10px" }}>
+                {newArr.length > 0 ? (
+                  <TableInfo data={newArr} />
+                ) : (
+                  'No hay datos'
+                )}
+              </div>
+            </div>
           </GridItem>
         </GridContainer>
       </CardManagement>
     </>
   );
-}
+};
 
 export default RecaudaciónDivisasEfectivoFaltantesSobrantes;

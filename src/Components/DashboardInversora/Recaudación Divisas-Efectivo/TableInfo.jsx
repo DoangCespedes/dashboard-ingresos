@@ -8,15 +8,14 @@ import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
 
 
-export default function TableInfo({montoMoneda, montoFaltante, office}) {
+export default function TableInfo({montoMoneda, office}) {
   return (
     <TableContainer component={Paper}>
       <Table sx={{ minWidth: 650 }} aria-label="caption table">
         <TableHead>
           <TableRow>
             <TableCell>Oficina</TableCell>
-            <TableCell >monto Moneda</TableCell>
-            <TableCell >monto Faltante</TableCell>
+            <TableCell align="right">Monto</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
@@ -25,8 +24,7 @@ export default function TableInfo({montoMoneda, montoFaltante, office}) {
               <TableCell component="th" scope="row">
                 {office}
               </TableCell>
-              <TableCell >{montoMoneda}</TableCell>
-              <TableCell >{montoFaltante}</TableCell>
+              <TableCell align="right">{montoMoneda}</TableCell>
             </TableRow>
        
         </TableBody>

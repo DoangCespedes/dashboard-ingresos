@@ -7,14 +7,13 @@ import GridContainer from "../Grid/GridContainer";
 import GridItem from "../Grid/GridItem";
 import CardHeader from "./CardHeader/CardHeader";
 import Axios from "axios";
-import ComponentWrapper from "../ComponentWrapper/ComponentWrapper";
+import ComponentWrapper from "./ComponentWrapper/ComponentWrapper";
 
 
 export default function DashboarOceanica() {
   const [value, setValue] = useState(0);
   const [currencies, setCurrencies] = useState([]);
   const [formData, setFormData] = useState(null);
-  // const [formData2, setFormData2] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
@@ -35,38 +34,10 @@ export default function DashboarOceanica() {
     }
   };
 
-  // const getResumeningresosme = async (formData) => {
-  //   if (!formData) return;
-
-  //   const params = {
-  //     dfecdesde: formData.dateDesde,
-  //     dfechasta: formData.dateHasta,
-  //     ccodmoneda: formData.currency,
-  //   };
-
-  //   setLoading(true);
-  //   setError(null);
-
-  //   try {
-  //     const { data } = await Axios.post("https://oceanicadeseguros.com/asg-api/dbo/satelite/resumeningresosme", params);
-  //     setFormData2(data);
-  //   } catch (err) {
-  //     setError("Error fetching data");
-  //     console.error("Error fetching resumen ingresos", err);
-  //   } finally {
-  //     setLoading(false);
-  //   }
-  // };
-
   useEffect(() => {
     getCurrencies();
   }, []);
 
-  // useEffect(() => {
-  //   if (formData) {
-  //     getResumeningresosme(formData);
-  //   }
-  // }, [formData]);
 
   const indicator = value
 

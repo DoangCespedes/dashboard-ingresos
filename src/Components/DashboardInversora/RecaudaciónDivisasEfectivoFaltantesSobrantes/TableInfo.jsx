@@ -69,6 +69,7 @@ export default function TableInfo({ data }) {
           </Button>
         </>
       )}
+      
     </TableContainer>
   );
 }

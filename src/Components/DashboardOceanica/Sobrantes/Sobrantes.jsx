@@ -60,7 +60,7 @@ const Sobrantes = ({ formData }) => {
             {loading && <div>Loading...</div>}
             {error && <div>{error}</div>}
               <div>
-                <div style={{padding:"5px", width: "100%", background: "#000", color: "white", fontSize: "1.5rem", textAlign: "center", borderRadius: "10px" }}>
+              <div style={{padding:"5px", width: "100%", background: "#f5f5f5", color: "#000", fontSize: "1.5rem", textAlign: "center", borderRadius: "10px" }}>
                   {montoSobrante ? <TableInfo montoSobrante={montoSobrante} office={office} /> : 'No hay datos '} {/* Manejo del caso en que montoSobrante es undefined */}
                 </div>
               </div>
