@@ -2,7 +2,6 @@ import styles from "../ManagementAdvisorsStyle";
 import { useForm } from "react-hook-form";
 import { Button, Icon, useMediaQuery, useTheme } from "@mui/material";
 import SearchIcon from '@mui/icons-material/Search';
-import CloudDownloadIcon from '@mui/icons-material/CloudDownload';
 import CardManagement from "@/Components/Cards/CardManagement";
 import DateMaterialPickerController from "@/Components/Controllers/DateMaterialPickerController";
 import SelectSimpleController from "@/Components/Controllers/SelectSimpleController";
@@ -67,11 +66,9 @@ export default function CardHeader(props) {
     <>
       <CardManagement
         titulo="DASHBOARD INVERSORA"
-        icon="work_outline"
-        iconColor="primary"
         headerComponent={
           <>
-            <GridItem xs={12} md={6} lg={4}>
+            <GridItem xs={14} md={4} lg={2}>
               <DateMaterialPickerController
                 fullWidth
                 control={control}
@@ -82,7 +79,7 @@ export default function CardHeader(props) {
                 limit
               />
             </GridItem>
-            <GridItem xs={12} md={6} lg={4}>
+            <GridItem xs={12} md={4} lg={2}>
               <DateMaterialPickerController
                 fullWidth
                 control={control}
@@ -93,7 +90,7 @@ export default function CardHeader(props) {
                 limit
               />
             </GridItem>
-            <GridItem xs={12} md={6} lg={4}>
+            <GridItem xs={12} md={4} lg={2}>
               <SelectSimpleController
                 control={control}
                 label="Moneda"
@@ -104,7 +101,7 @@ export default function CardHeader(props) {
             </GridItem>
 
             {indicator === 3 && 
-              <GridItem xs={12} md={6} lg={4}>
+              <GridItem xs={12} md={4} lg={2}>
               <SelectSimpleController
                 control={control}
                 label="Oficina"
@@ -114,21 +111,14 @@ export default function CardHeader(props) {
               />
             </GridItem>
             }
+            <GridItem xs={12} md={4} lg={2}>
+              <Button onClick={handleSubmit(onSubmit)}>
+                <SearchIcon /> Buscar
+              </Button>
+            </GridItem>
           </>
         }
       >
-        <GridContainer justify="center" alignItems="center" style={{ marginTop: "2rem" }}>
-          <GridItem xs={12} md={4} lg={2}>
-            <Button onClick={handleSubmit(onSubmit)}>
-              <SearchIcon /> Buscar
-            </Button>
-          </GridItem>
-          <GridItem xs={12} md={4} lg={2}>
-            <Button variant="contained" color="success">
-              <CloudDownloadIcon style={{ marginRight: "3px" }} /> Descargar Excel
-            </Button>
-          </GridItem>
-        </GridContainer>
       </CardManagement>
     </>
   );

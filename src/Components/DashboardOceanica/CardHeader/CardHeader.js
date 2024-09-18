@@ -10,7 +10,6 @@ import GridItem from "@/Components/Grid/GridItem";
 import GridContainer from "@/Components/Grid/GridContainer";
 import { useState } from "react";
 import { getDateForSearch } from "@/Components/Utils/utils2";
-import { format } from 'date-fns';
 
 const oficina = [ 
 {
@@ -71,7 +70,7 @@ export default function CardHeader(props) {
         iconColor="primary"
         headerComponent={
           <>
-            <GridItem xs={12} md={6} lg={4}>
+            <GridItem xs={14} md={4} lg={2}>
               <DateMaterialPickerController
                 fullWidth
                 control={control}
@@ -82,7 +81,7 @@ export default function CardHeader(props) {
                 limit
               />
             </GridItem>
-            <GridItem xs={12} md={6} lg={4}>
+            <GridItem xs={12} md={4} lg={2}>
               <DateMaterialPickerController
                 fullWidth
                 control={control}
@@ -93,7 +92,7 @@ export default function CardHeader(props) {
                 limit
               />
             </GridItem>
-            <GridItem xs={12} md={6} lg={4}>
+            <GridItem xs={12} md={4} lg={2}>
               <SelectSimpleController
                 control={control}
                 label="Moneda"
@@ -104,7 +103,7 @@ export default function CardHeader(props) {
             </GridItem>
 
             {indicator === 3 && 
-              <GridItem xs={12} md={6} lg={4}>
+              <GridItem xs={12} md={4} lg={2}>
               <SelectSimpleController
                 control={control}
                 label="Oficina"
@@ -114,21 +113,14 @@ export default function CardHeader(props) {
               />
             </GridItem>
             }
+            <GridItem xs={12} md={4} lg={2}>
+              <Button onClick={handleSubmit(onSubmit)}>
+                <SearchIcon /> Buscar
+              </Button>
+            </GridItem>
           </>
         }
       >
-        <GridContainer justify="center" alignItems="center" style={{ marginTop: "2rem" }}>
-          <GridItem xs={12} md={4} lg={2}>
-            <Button onClick={handleSubmit(onSubmit)}>
-              <SearchIcon /> Buscar
-            </Button>
-          </GridItem>
-          <GridItem xs={12} md={4} lg={2}>
-            <Button variant="contained" color="success">
-              <CloudDownloadIcon style={{ marginRight: "3px" }} /> Descargar Excel
-            </Button>
-          </GridItem>
-        </GridContainer>
       </CardManagement>
     </>
   );

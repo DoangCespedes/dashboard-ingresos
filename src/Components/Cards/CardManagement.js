@@ -45,7 +45,7 @@ export default function CardManagement(props) {
         </CardIcon> */}
         <Div1>
           <Div2>
-            <NewH4>{props.titulo}</NewH4>
+            <h3>{props.titulo}</h3>
           </Div2>
           {props.headerComponent && !hiddenSmDown && (
             /*<Hidden smDown implementation="css" sx={styles.baseHeader}>*/
