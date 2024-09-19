@@ -1,5 +1,6 @@
 html{
-    background-color: #fff
+    background-color: #fff;
+    font-family:Arial, Helvetica, sans-serif
 }
 body{
     margin: 0;
@@ -8,7 +9,7 @@ body{
 
 
 .MuiCircularProgress-root{
-    color: #e45a37;  
+    color: #c2caca;  
 }
 
 ::-webkit-scrollbar {

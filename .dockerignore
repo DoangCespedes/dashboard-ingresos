@@ -1,0 +1,8 @@
+node_modules/
+node_modules
+.eslintrc.json
+
+package-lock.json
+
+<!-- # gatsby files -->
+.cache/
